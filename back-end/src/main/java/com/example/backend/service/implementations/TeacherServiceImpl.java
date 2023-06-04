@@ -1,18 +1,22 @@
 package com.example.backend.service.implementations;
 
-import com.example.backend.model.Teacher;
+import com.example.backend.dto.TeacherDto;
+import com.example.backend.dto.converter.ToTeacherDtoConverter;
+import com.example.backend.entity.Teacher;
 import com.example.backend.repository.TeacherRepository;
 import com.example.backend.service.TeacherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class TeacherServiceImpl implements TeacherService {
 
     private final TeacherRepository teacherRepository;
+    private final ToTeacherDtoConverter converter;
 
     @Override
     public Teacher getTeacherById(long id) {

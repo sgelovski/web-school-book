@@ -1,6 +1,6 @@
 package com.example.backend.controller;
 
-import com.example.backend.model.School;
+import com.example.backend.entity.School;
 import com.example.backend.service.SchoolService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

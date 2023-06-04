@@ -1,6 +1,8 @@
 package com.example.backend.controller;
 
-import com.example.backend.model.Student;
+import com.example.backend.dto.StudentDto;
+import com.example.backend.dto.converter.ToStudentDtoConverter;
+import com.example.backend.entity.Student;
 import com.example.backend.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.example.backend.constants.API.*;
 
@@ -18,13 +21,14 @@ import static com.example.backend.constants.API.*;
 public class StudentController {
 
     private final StudentService studentService;
+    private final ToStudentDtoConverter converter;
 
     @GetMapping(GET_ALL_URI)
-    public List<Student> getAllStudents() {
-        return studentService.getAllStudents();
+    public List<StudentDto> getAllStudents() {
+        return studentService.getAllStudents().stream().map(converter::convert).collect(Collectors.toList());
     }
     @GetMapping(GET_BY_ID_URI)
-    public Student getStudentById(@PathVariable Long id) {
-        return studentService.getStudentById(id);
+    public StudentDto getStudentById(@PathVariable Long id) {
+        return converter.convert(studentService.getStudentById(id));
     }
 }

@@ -1,8 +1,8 @@
 package com.example.backend.dto;
 
-import com.example.backend.model.Headmaster;
-import com.example.backend.model.Student;
-import com.example.backend.model.Teacher;
+import com.example.backend.entity.Headmaster;
+import com.example.backend.entity.Student;
+import com.example.backend.entity.Teacher;
 import lombok.Builder;
 
 import java.util.List;

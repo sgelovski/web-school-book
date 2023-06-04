@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
-import com.example.backend.model.Teacher;
+import com.example.backend.dto.TeacherDto;
+import com.example.backend.entity.Teacher;
 
 import java.util.List;
 

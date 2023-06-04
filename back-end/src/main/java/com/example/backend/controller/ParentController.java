@@ -1,6 +1,6 @@
 package com.example.backend.controller;
 
-import com.example.backend.model.Parent;
+import com.example.backend.entity.Parent;
 import com.example.backend.service.ParentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

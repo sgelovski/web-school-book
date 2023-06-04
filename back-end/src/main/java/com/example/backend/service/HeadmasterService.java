@@ -1,6 +1,7 @@
 package com.example.backend.service;
 
-import com.example.backend.model.Headmaster;
+import com.example.backend.dto.HeadmasterDto;
+import com.example.backend.entity.Headmaster;
 
 import java.util.List;
 

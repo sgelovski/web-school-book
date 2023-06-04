@@ -1,6 +1,6 @@
 package com.example.backend.service.implementations;
 
-import com.example.backend.model.Parent;
+import com.example.backend.entity.Parent;
 import com.example.backend.repository.ParentRepository;
 import com.example.backend.service.ParentService;
 import lombok.RequiredArgsConstructor;

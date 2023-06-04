@@ -1,18 +1,6 @@
 [
   {
     "name": "SOU VASSIL LEVSKI",
-    "address": "4 Flowers str.",
-    "students": [
-      {
-        "name": "Simeon Gelovski",
-        "school_class": "12b"
-      }
-    ],
-    "teachers": [
-      {
-        "name": "Iveta Krasteva",
-        "subjects": ["SCIENCE", "BIOLOGY"]
-      }
-    ]
+    "address": "4 Flowers str."
   }
 ]

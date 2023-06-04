@@ -1,0 +1,247 @@
+<mvc:View
+        controllerName="web.school.book.controller.Page"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:core="sap.ui.core"
+        xmlns:tnt="sap.tnt"
+        xmlns="sap.m"
+        height="100%">
+
+    <tnt:ToolPage>
+        <tnt:header>
+            <tnt:ToolHeader>
+                <Image height="2.5rem"
+                       class="sapUiSmallMarginBegin"
+                       src="{path:'/isNightShiftOn', formatter: '.formatter.formatLogo'}"/>
+                <Title level="H1" text="Web School Book">
+                    <layoutData>
+                        <OverflowToolbarLayoutData shrinkable="true"/>
+                    </layoutData>
+                </Title>
+                <Title level="H3" titleStyle="H6" text="by Simeon Gelovski">
+                    <layoutData>
+                        <OverflowToolbarLayoutData shrinkable="true"/>
+                    </layoutData>
+                </Title>
+                <ToolbarSpacer>
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px"/>
+                    </layoutData>
+                </ToolbarSpacer>
+                <tnt:ToolHeaderUtilitySeparator/>
+                <Label id="switchLabel" text="Night Shift"/>
+                <Switch id="nightShiftSwitch" state="{/isNightShiftOn}" change="toggleNightShift">
+                    <layoutData>
+                        <FlexItemData growFactor="1"/>
+                    </layoutData>
+                </Switch>
+                <OverflowToolbarButton text="Notifications" tooltip="Notifications" icon="sap-icon://bell" type="Transparent"/>
+                <Avatar src="test-resources/sap/tnt/images/John_Miller.png"
+                        displaySize="XS">
+                    <layoutData>
+                        <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                    </layoutData>
+                </Avatar>
+                <OverflowToolbarButton text="Menu" tooltip="Menu" icon="sap-icon://grid" type="Transparent" press="fnOpen"/>
+            </tnt:ToolHeader>
+        </tnt:header>
+        <tnt:mainContents>
+            <Toolbar>
+                <HBox>
+                    <Button text="Home" press="handleNav">
+                        <layoutData>
+                            <FlexItemData growFactor="1"/>
+                        </layoutData>
+                        <customData>
+                            <core:CustomData key="target" value="HomeId"/>
+                        </customData>
+                    </Button>
+                    <Button text="Teachers" press="handleNav">
+                        <layoutData>
+                            <FlexItemData growFactor="1"/>
+                        </layoutData>
+                        <customData>
+                            <core:CustomData key="target" value="TeachersId"/>
+                        </customData>
+                    </Button>
+                    <Button text="Students" press="handleNav">
+                        <layoutData>
+                            <FlexItemData growFactor="1"/>
+                        </layoutData>
+                        <customData>
+                            <core:CustomData key="target" value="StudentsId"/>
+                        </customData>
+                    </Button>
+                    <Button text="Schools" press="handleNav">
+                        <layoutData>
+                            <FlexItemData growFactor="1"/>
+                        </layoutData>
+                        <customData>
+                            <core:CustomData key="target" value="SchoolsId"/>
+                        </customData>
+                    </Button>
+                    <Button text="Headmasters" press="handleNav">
+                        <layoutData>
+                            <FlexItemData growFactor="1"/>
+                        </layoutData>
+                        <customData>
+                            <core:CustomData key="target" value="HeadmastersId"/>
+                        </customData>
+                    </Button>
+                </HBox>
+            </Toolbar>
+            <NavContainer
+                    navigationFinished="onNavigationFinished"
+                    id="navCon"
+                    class="sapUiSmallMarginBottom">
+                <pages>
+
+
+                    <Page id="HomeId" title="Page 1" showHeader="false">
+                        <content>
+<!--                            <Carousel class="sapUiContentPadding" loop="true" showPageIndicator="false">-->
+<!--                                <Image mode="Background" width="100%" height="100%" src="/media/home_page_pic1.jpg" alt="Example picture of speakers"/>-->
+                                <Image mode="Background" width="100%" height="100%" src="/media/home_page_pic2.jpg" alt="Example picture of speakers"/>
+<!--                                <Image width="100%" src="/media/home_page_pic3.jpg" alt="Example picture of speakers"/>-->
+<!--                            </Carousel>-->
+                        </content>
+                    </Page>
+
+
+                    <Page id="TeachersId" title="Page 2" showHeader="false">
+                        <Table items="{path: '/teachers'}">
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <content>
+                                        <Title text="Teachers" level="H2"/>
+                                        <ToolbarSpacer/>
+                                    </content>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column width="12em">
+                                    <Text text="Name"/>
+                                </Column>
+                                <Column>
+                                    <Text text="Subjects"/>
+                                </Column>
+                                <Column hAlign="Center">
+                                    <Text text="School"/>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem vAlign="Middle">
+                                    <cells>
+                                        <ObjectIdentifier title="{name}"/>
+                                        <Text text="{subjects}"/>
+                                        <Text text="{school/name}"/>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </Page>
+
+
+                    <Page id="StudentsId" title="Page 3" showHeader="false">
+                       <Table items="{path: '/students'}">
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <content>
+                                        <Title text="Students" level="H2"/>
+                                        <ToolbarSpacer/>
+                                    </content>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column width="12em">
+                                    <Text text="Name"/>
+                                </Column>
+                                <Column>
+                                    <Text text="School Grade"/>
+                                </Column>
+                                <Column hAlign="Center">
+                                    <Text text="School"/>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem vAlign="Middle">
+                                    <cells>
+                                        <ObjectIdentifier title="{name}"/>
+                                        <Text text="{schoolClass}"/>
+                                        <Text text="{school/name}"/>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </Page>
+
+
+                    <Page id="SchoolsId" title="Page 4" showHeader="false">
+                       <Table items="{path: '/schools'}">
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <content>
+                                        <Title text="Students" level="H2"/>
+                                        <ToolbarSpacer/>
+                                    </content>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column width="12em">
+                                    <Text text="Name"/>
+                                </Column>
+                                <Column>
+                                    <Text text="Address"/>
+                                </Column>
+                                <Column hAlign="Center">
+                                    <Text text="Headmaster"/>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem vAlign="Middle">
+                                    <cells>
+                                        <ObjectIdentifier title="{name}"/>
+                                        <Text text="{address}"/>
+                                        <Text text="{headmaster/name}"/>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </Page>
+
+
+                    <Page id="HeadmastersId" title="Page 4" showHeader="false">
+                        <Table items="{path: '/headmasters'}">
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <content>
+                                        <Title text="Headmasters" level="H2"/>
+                                        <ToolbarSpacer/>
+                                    </content>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column width="12em">
+                                    <Text text="Name"/>
+                                </Column>
+                                <Column hAlign="Center">
+                                    <Text text="School"/>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem vAlign="Middle">
+                                    <cells>
+                                        <ObjectIdentifier title="{name}"/>
+                                        <Text text="{school/name}"/>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </Page>
+
+
+                </pages>
+            </NavContainer>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+
+</mvc:View>

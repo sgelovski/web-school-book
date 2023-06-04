@@ -1,0 +1,70 @@
+{
+  "sap.app": {
+    "id": "web.school.book",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui5": {
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "rootView": {
+      "viewName": "web.school.book.view.Page",
+      "type": "XML",
+      "async": true,
+      "id": "dashboard"
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "web.school.book.view",
+        "controlId": "dashboard",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "bypassed": {
+          "target": "notFound"
+        }
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "page",
+          "target": "page"
+        }
+      ],
+      "targets": {
+        "dashboard": {
+          "viewName": "Page"
+        }
+      }
+    },
+    "dependencies": {
+      "libs": {
+        "sap.ui.unified": {},
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.f": {},
+        "sap.ui.layout": {},
+        "sap.ui.webc.main": {}
+      }
+    },
+    "config": {
+      "sample": {
+        "stretch": true,
+        "files": [
+          "Page.view.xml",
+          "Page.controller.js",
+          "manifest.json",
+          "Menu.fragment.xml",
+          "formatter.js"
+        ]
+      }
+    }
+  }
+}

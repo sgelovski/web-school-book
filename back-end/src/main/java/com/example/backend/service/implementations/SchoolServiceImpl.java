@@ -1,6 +1,6 @@
 package com.example.backend.service.implementations;
 
-import com.example.backend.model.School;
+import com.example.backend.entity.School;
 import com.example.backend.repository.SchoolRepository;
 import com.example.backend.service.SchoolService;
 import lombok.RequiredArgsConstructor;

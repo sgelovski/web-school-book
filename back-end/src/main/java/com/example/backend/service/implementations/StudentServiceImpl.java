@@ -1,6 +1,6 @@
 package com.example.backend.service.implementations;
 
-import com.example.backend.model.Student;
+import com.example.backend.entity.Student;
 import com.example.backend.repository.StudentRepository;
 import com.example.backend.service.StudentService;
 import lombok.RequiredArgsConstructor;

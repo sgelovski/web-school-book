@@ -1,0 +1,14 @@
+.navContainerControl {
+    border-color: #888;
+    border-style: solid;
+    border-width: 0.0625em;
+}
+
+[class*='sapM']:focus:before, [class*='sapM']:after, [class*='sapM']:focus {
+    border: none !important;
+    outline: none !important;
+    outline-offset: 0 !important;
+}
+.sapMTBActive:focus {
+    box-shadow: none !important;
+}

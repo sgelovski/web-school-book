@@ -1,6 +1,7 @@
 package com.example.backend.controller;
 
-import com.example.backend.model.Headmaster;
+import com.example.backend.dto.HeadmasterDto;
+import com.example.backend.dto.converter.ToHeadmasterDtoConverter;
 import com.example.backend.service.HeadmasterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.example.backend.constants.API.*;
 
@@ -18,13 +20,14 @@ import static com.example.backend.constants.API.*;
 public class HeadmasterController {
 
     private final HeadmasterService headmasterService;
+    private final ToHeadmasterDtoConverter converter;
 
     @GetMapping(GET_ALL_URI)
-    public List<Headmaster> getAllHeadmasters() {
-        return headmasterService.getAllHeadmasters();
+    public List<HeadmasterDto> getAllHeadmasters() {
+        return headmasterService.getAllHeadmasters().stream().map(converter::convert).collect(Collectors.toList());
     }
     @GetMapping(GET_BY_ID_URI)
-    public Headmaster getHeadmasterById(@PathVariable Long id) {
-        return headmasterService.getHeadmasterById(id);
+    public HeadmasterDto getHeadmasterById(@PathVariable Long id) {
+        return converter.convert(headmasterService.getHeadmasterById(id));
     }
 }

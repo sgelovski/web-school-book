@@ -1,6 +1,6 @@
 package com.example.backend.service;
 
-import com.example.backend.model.Parent;
+import com.example.backend.entity.Parent;
 
 import java.util.List;
 
