@@ -87,6 +87,14 @@
                             <core:CustomData key="target" value="HeadmastersId"/>
                         </customData>
                     </Button>
+                    <Button text="Parents" press="handleNav">
+                        <layoutData>
+                            <FlexItemData growFactor="1"/>
+                        </layoutData>
+                        <customData>
+                            <core:CustomData key="target" value="ParentsId"/>
+                        </customData>
+                    </Button>
                 </HBox>
             </Toolbar>
             <NavContainer
@@ -232,6 +240,35 @@
                                     <cells>
                                         <ObjectIdentifier title="{name}"/>
                                         <Text text="{school/name}"/>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </Page>
+
+                    <Page id="ParentsId" title="Page 5" showHeader="false">
+                        <Table items="{path: '/parents'}">
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <content>
+                                        <Title text="Parents" level="H2"/>
+                                        <ToolbarSpacer/>
+                                    </content>
+                                </OverflowToolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column width="12em">
+                                    <Text text="Name"/>
+                                </Column>
+                                <Column hAlign="Center">
+                                    <Text text="Students"/>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem vAlign="Middle">
+                                    <cells>
+                                        <ObjectIdentifier title="{name}"/>
+                                        <Text text="{path:'students', formatter: '.formatter.formatStudentsNames'}"/>
                                     </cells>
                                 </ColumnListItem>
                             </items>

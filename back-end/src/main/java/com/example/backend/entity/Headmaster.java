@@ -1,21 +1,23 @@
 package com.example.backend.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.OneToOne;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Data
 @Entity
+@Getter
+@Setter
+@Table(name = "headmaster")
+@ToString(exclude = "school")
 @EqualsAndHashCode(callSuper = true)
 public class Headmaster extends BaseEntity {
 
+    @Column(name = "name")
     private String name;
 
     @JsonIgnore
-    @OneToOne(mappedBy = "headmaster", fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "school_id")
     private School school;
 
 }

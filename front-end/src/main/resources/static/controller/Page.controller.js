@@ -42,7 +42,8 @@ sap.ui.define([
                         schools: [],
                         teachers: [],
                         headmasters: [],
-                        students: []
+                        students: [],
+                        parents: [],
                     },
                     oView = this.getView();
 
@@ -58,7 +59,8 @@ sap.ui.define([
                         this._getAllByEntity(Constants.API.SCHOOLS_URI, "/schools"),
                         this._getAllByEntity(Constants.API.HEADMASTERS_URI, "/headmasters"),
                         this._getAllByEntity(Constants.API.TEACHERS_URI, "/teachers"),
-                        this._getAllByEntity(Constants.API.STUDENTS_URI, "/students")
+                        this._getAllByEntity(Constants.API.STUDENTS_URI, "/students"),
+                        this._getAllByEntity(Constants.API.PARENTS_URI, "/parents")
                     ]).catch(err => console.error("Initial fetch - " + err));
 
 

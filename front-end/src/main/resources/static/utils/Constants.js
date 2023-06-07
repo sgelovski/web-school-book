@@ -5,7 +5,8 @@ sap.ui.define([], function () {
         SCHOOLS_URI: 'http://localhost:8080/schools',
         HEADMASTERS_URI: 'http://localhost:8080/headmasters',
         TEACHERS_URI: 'http://localhost:8080/teachers',
-        STUDENTS_URI: 'http://localhost:8080/students'
+        STUDENTS_URI: 'http://localhost:8080/students',
+        PARENTS_URI: 'http://localhost:8080/parents'
     }
 
     const THEME = {

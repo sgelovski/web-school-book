@@ -22,12 +22,14 @@ public class HeadmasterController {
     private final HeadmasterService headmasterService;
     private final ToHeadmasterDtoConverter converter;
 
-    @GetMapping(GET_ALL_URI)
-    public List<HeadmasterDto> getAllHeadmasters() {
-        return headmasterService.getAllHeadmasters().stream().map(converter::convert).collect(Collectors.toList());
-    }
     @GetMapping(GET_BY_ID_URI)
     public HeadmasterDto getHeadmasterById(@PathVariable Long id) {
         return converter.convert(headmasterService.getHeadmasterById(id));
     }
+
+    @GetMapping(GET_ALL_URI)
+    public List<HeadmasterDto> getAllHeadmasters() {
+        return headmasterService.getAllHeadmasters().stream().map(converter::convert).collect(Collectors.toList());
+    }
+
 }

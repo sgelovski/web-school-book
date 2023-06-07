@@ -1,18 +1,21 @@
 package com.example.backend.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
+@Entity
 @Getter
 @Setter
-@Entity
 @ToString
 @Table(name = "schools")
 @EqualsAndHashCode(callSuper = true)
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class School extends BaseEntity {
 
     @Column(name = "name")
@@ -21,7 +24,7 @@ public class School extends BaseEntity {
     @Column(name = "address")
     private String address;
 
-    @OneToOne
+    @OneToOne(mappedBy = "school")
     private Headmaster headmaster;
 
     @OneToMany(mappedBy = "school", fetch = FetchType.EAGER)

@@ -14,6 +14,7 @@ public class ToStudentDtoConverter implements Converter<Student, StudentDto> {
                 .name(source.getName())
                 .schoolClass(source.getSchoolClass())
                 .school(source.getSchool())
+                .parents(source.getParents())
                 .build();
     }
 }

@@ -23,12 +23,14 @@ public class StudentController {
     private final StudentService studentService;
     private final ToStudentDtoConverter converter;
 
-    @GetMapping(GET_ALL_URI)
-    public List<StudentDto> getAllStudents() {
-        return studentService.getAllStudents().stream().map(converter::convert).collect(Collectors.toList());
-    }
     @GetMapping(GET_BY_ID_URI)
     public StudentDto getStudentById(@PathVariable Long id) {
         return converter.convert(studentService.getStudentById(id));
     }
+
+    @GetMapping(GET_ALL_URI)
+    public List<StudentDto> getAllStudents() {
+        return studentService.getAllStudents().stream().map(converter::convert).collect(Collectors.toList());
+    }
+
 }

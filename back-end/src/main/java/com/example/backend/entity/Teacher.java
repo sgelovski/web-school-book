@@ -1,18 +1,18 @@
 package com.example.backend.entity;
 
 import com.example.backend.constants.enums.Subject;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 
-
-@Data
+@Entity
 @Getter
 @Setter
-@Entity
 @ToString(exclude = "school")
 @Table(name = "teachers")
 @EqualsAndHashCode(callSuper = true)
