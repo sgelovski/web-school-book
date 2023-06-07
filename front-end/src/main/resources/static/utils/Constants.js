@@ -18,13 +18,39 @@ sap.ui.define([], function () {
         {
             "src": "sap-icon://home",
             "title": "Home",
-            "subTitle": "Central Home"
+            "target": "HomeId"
         },
         {
             "src": "sap-icon://company-view",
             "title": "Teachers",
-            "subTitle": "School Teachers"
+            "subTitle": "School Teachers",
+            "target": "TeachersId"
+        },
+        {
+            "src": "sap-icon://company-view",
+            "title": "Students",
+            "subTitle": "School Students",
+            "target": "StudentsId"
+        },
+        {
+            "src": "sap-icon://official-service",
+            "title": "Schools",
+            "subTitle": "All Schools",
+            "target": "SchoolsId"
+        },
+        {
+            "src": "sap-icon://study-leave",
+            "title": "Headmasters",
+            "subTitle": "School Headmasters",
+            "target": "HeadmastersId"
+        },
+        {
+            "src": "sap-icon://group",
+            "title": "Parents",
+            "subTitle": "Students Parents",
+            "target": "ParentsId"
         }
+
     ]
 
     return {

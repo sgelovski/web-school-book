@@ -188,7 +188,7 @@
                             <headerToolbar>
                                 <OverflowToolbar>
                                     <content>
-                                        <Title text="Students" level="H2"/>
+                                        <Title text="Schools" level="H2"/>
                                         <ToolbarSpacer/>
                                     </content>
                                 </OverflowToolbar>

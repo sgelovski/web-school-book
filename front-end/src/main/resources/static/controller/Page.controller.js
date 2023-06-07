@@ -111,6 +111,8 @@ sap.ui.define([
             },
 
             fnChange: function (oEvent) {
+                let navCon = this.byId("navCon");
+                navCon.to(this.byId(oEvent.getParameter("itemPressed").getTarget()));
                 MessageToast.show("Change event was fired from " + oEvent.getParameter("itemPressed").getId() + ". It has targetSrc: " + oEvent.getParameter("itemPressed").getTargetSrc() + " and target: " + oEvent.getParameter("itemPressed").getTarget() + ".");
             },
 
